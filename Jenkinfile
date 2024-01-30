@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vikassharma812/java-app.git'
             }
         }
-    stage("Unit Test")
+    stages("Unit Test")
         {
             
         }
