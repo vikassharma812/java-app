@@ -41,7 +41,7 @@
                         <goal>repackage</goal>
                     </goals>
                     <configuration>
-                        <finalName>SRM</finalName>
+                        <finalName>SRM1</finalName>
                     </configuration>
                 </execution>
             </executions>
