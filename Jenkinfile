@@ -10,10 +10,16 @@ pipeline {
     stage("Unit Test")
         {
             steps{
-                echo "main test"
+               sh 'mvn test'
             }
         }
-    stage("Unit install")
+ stage("Integration Test")
+        {
+            steps{
+               sh 'mvn verify -DskipUnitTests'
+            }
+        }
+    stage("MAVEN BUILD")
         {
             steps{
                 sh "mvn clean install"
