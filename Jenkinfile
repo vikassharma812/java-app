@@ -13,7 +13,7 @@ pipeline {
                 echo "main test"
             }
         }
-    stage("Unit Test")
+    stage("Unit install")
         {
             steps{
                 sh "mvn clean install"
