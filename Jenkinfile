@@ -13,7 +13,7 @@ pipeline {
                sh 'mvn test'
             }
         }
- stage("Integration Test")
+    stage("Integration Test")
         {
             steps{
                sh 'mvn verify -DskipUnitTests'
@@ -23,6 +23,15 @@ pipeline {
         {
             steps{
                 sh 'mvn clean install'
+            }
+        }
+    stage("STATIC CODE ANALYSIS") {
+            steps{
+                script{
+                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                   }
             }
         }
     }
